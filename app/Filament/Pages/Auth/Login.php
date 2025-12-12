@@ -95,4 +95,15 @@ class Login extends BaseLogin
             'password' => $data['password'],
         ];
     }
+
+    protected function getFooterActions(): array
+    {
+        return [
+            Action::make('register')
+                ->label('Create an account')
+                ->url(route('filament.auth.register'))
+                ->color('gray')
+                ->outlined(),
+        ];
+    }
 }

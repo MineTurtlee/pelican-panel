@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use App\Enums\CustomizationKey;
 use App\Filament\Pages\Auth\EditProfile;
 use App\Filament\Pages\Auth\Login;
+use App\Filament\Pages\Auth\Register;
 use App\Http\Middleware\LanguageMiddleware;
 use App\Http\Middleware\RequireTwoFactorAuthentication;
 use Filament\Actions\Action;
@@ -51,6 +52,7 @@ abstract class PanelProvider extends BasePanelProvider
                     ->url(fn () => EditProfile::getUrl(panel: 'app')),
             ])
             ->login(Login::class)
+            ->register(Register::class)
             ->passwordReset()
             ->multiFactorAuthentication([
                 AppAuthentication::make()->recoverable(),

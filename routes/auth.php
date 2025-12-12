@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\OAuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/login', '/login')->name('auth.login');
+Route::redirect('/register', '/register')->name('auth.register')
 
 Route::prefix('oauth')->group(function () {
     Route::get('/redirect/{driver}', [OAuthController::class, 'redirect'])->name('auth.oauth.redirect');
